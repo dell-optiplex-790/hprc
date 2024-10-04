@@ -1,0 +1,84 @@
+<style>
+@font-face{font-family:j;src:url(font.ttf)}#e{font-family:j;background-color:#444;color:lime;font-size:150%;margin-bottom:1%;border:4px solid #222}button{background-color:#777;color:#fff;width:2em!important;border:4px solid #444;margin-right:0!important}*{font-size:110%}body{background-color:#bbb}
+</style>
+
+<title>HPRC</title>
+
+<!-- input -->
+<input id="e" placeholder="ENTER NAME" readonly></input><br>
+
+<!-- 1st row -->
+<button onclick="q(0)">A</button>
+<button onclick="q(1)">B</button>
+<button onclick="q(2)">C</button>
+<button onclick="q(3)">D</button>
+<button onclick="q(4)">E</button>
+<button onclick="q(5)">F</button>
+<button onclick="q(6)">G</button>
+<button onclick="q(7)">H</button><br>
+
+
+<!-- 2nd row -->
+<button onclick="q(8)">I</button>
+<button onclick="q(9)">J</button>
+<button onclick="q(10)">K</button>
+<button onclick="q(11)">L</button>
+<button onclick="q(12)">M</button>
+<button onclick="q(13)">N</button>
+
+
+<!-- comically large button -->
+<button onclick="j()" style="font-size:430%;position:absolute;border-radius:50%;font-family:Consolas,monospace;width:7%!important;background-color:lime;border:8px solid green">GO</button><br>
+
+
+<!-- 3rd row -->
+<button onclick="q(14)">O</button>
+<button onclick="q(15)">P</button>
+<button onclick="q(16)">Q</button>
+<button onclick="q(17)">R</button>
+<button onclick="q(18)">S</button>
+<button onclick="q(19)">T</button><br>
+
+<!-- 4th row -->
+<button onclick="q(20)">U</button>
+<button onclick="q(21)">V</button>
+<button onclick="q(22)">W</button>
+<button onclick="q(23)">X</button>
+<button onclick="q(24)">Y</button>
+<button onclick="q(25)">Z</button>
+<br><br>
+<img id="w" src="" width="64px" height="64px" style="display:none"></img>
+
+<!-- JavaScript -->
+<script>
+	document.getElementById("e").value=""
+	function q(i) {
+		var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		document.getElementById("e").value+=a[i]
+	}
+	function j() {
+		var q = document.getElementById("e").value
+		var c = [
+			 "barfbag",
+			 "book",
+			 "bubble",
+			 "coiny",
+			 "firey",
+			 "fries",
+			 "gelatin",
+			 "icey",
+			 "leafy",
+			 "naily",
+			 "pillow",
+			 "pin",
+			 "ruby"
+		]
+		document.getElementById("e").value=""
+		if(c.includes(q.toLowerCase())) {
+			document.getElementById("w").src="contestants/"+q.toLowerCase()+".webp"
+			document.getElementById("w").style.display=""
+		} else {
+			document.getElementById("w").style.display="none"
+		}
+	}
+</script>
